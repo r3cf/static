@@ -79,16 +79,16 @@
 
     .error-code {
       font-family: var(--font-main);
-      font-size: 8rem;
+      font-size: 7rem;
       line-height: 1;
       margin: 0;
-      color: var(--color-black);
-      text-shadow: 4px 4px 0 var(--color-accent);
+      color: var(--color-night);
+      text-shadow: 4px 4px 0 var(--color-signal);
     }
 
     .error-title {
       font-family: var(--font-mono);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       text-transform: uppercase;
       margin: 1rem 0;
       background: var(--color-night);
@@ -100,9 +100,15 @@
     }
 
     .error-title::before {
-      content: '●';
-      margin-right: 0.5rem;
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--color-signal);
+      border-radius: 50%;
+      margin-right: 0.75rem;
       animation: blink 1.5s ease-in-out infinite;
+      box-shadow: 0 0 8px var(--color-signal);
     }
 
     .error-message {
@@ -113,16 +119,16 @@
 
     .error-quote {
       font-style: italic;
-      color: var(--color-nebula);
-      font-size: 0.9rem;
+      color: var(--color-blueprint-dark);
+      font-size: 0.85rem;
       margin: 1.5rem 0;
       padding: 0 1rem;
     }
 
     .error-link {
       display: inline-block;
-      background: var(--color-black);
-      color: var(--color-bg);
+      background: var(--color-signal);
+      color: var(--color-black);
       text-decoration: none;
       font-family: var(--font-main);
       text-transform: uppercase;
@@ -131,13 +137,14 @@
       box-shadow: var(--shadow-sm);
       transition: transform 0.1s, box-shadow 0.1s;
       margin-top: 1rem;
+      font-weight: 700;
     }
 
     .error-link:hover {
       transform: translate(-2px, -2px);
       box-shadow: 6px 6px 0 var(--color-black);
-      background: var(--color-signal);
-      color: var(--color-black);
+      background: var(--color-maker);
+      color: white;
     }
   </style>
 </head>

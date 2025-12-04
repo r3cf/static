@@ -1,83 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>R3 Commons Foundation</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
-<meta name="description" content="Open tools for hard times and clear nights. Local-first tech, community-first mission.">
-</head>
-<body>
+#+TITLE: R3 Commons Foundation
+#+OPTIONS: toc:nil num:nil author:nil creator:nil date:nil title:nil
+#+OPTIONS: html-style:nil html-scripts:nil html-postamble:nil
+#+HTML_HEAD: <link rel="stylesheet" href="style.css">
 
-<header class="hero">
-  <div class="container">
-    <img src="r3commons-mission-logo.png" alt="R3 Commons" class="hero-logo">
-    <h1>R3 COMMONS</h1>
-    <p class="subtitle">RADIO · ROBOTICS · RESEARCH</p>
-    <p class="tagline">Open tools for hard times and clear nights.</p>
-    <p class="hero-quote">"The cosmos is within us. We are made of star-stuff." — Carl Sagan</p>
-  </div>
-</header>
+* Manifesto
+:PROPERTIES:
+:CUSTOM_ID: manifesto
+:HTML_CONTAINER_CLASS: section
+:END:
 
-<nav class="nav">
-  <div class="container">
-    <a href="#manifesto">Manifesto</a>
-    <a href="#mission">Mission</a>
-    <a href="#pillars">Pillars</a>
-    <a href="#projects">Projects</a>
-    <a href="#get-involved">Get Involved</a>
-  </div>
-</nav>
-<main>
-
-
-<section id="manifesto-section" class="section">
-<h2 id="manifesto">Manifesto</h2>
-<div class="section-content">
-<p class="lead">
+#+ATTR_HTML: :class lead
 We believe that true community resilience isn't just about surviving disasters; it's about thriving daily through shared knowledge and capability.
-</p>
 
-<p>
-In an digital era, we hold that neighbors who can build their own tools, maintain their own communication lines, and understand the sky above them are safer, more connected, and more curious.
-</p>
+In a digital era, we hold that neighbors who can build their own tools, maintain their own communication lines, and understand the sky above them are safer, more connected, and are more curious.
 
-<p>
-We are a <b>"local-first"</b> initiative, prioritizing technologies and skills that serve the neighborhood directly and function independently of the global grid or Internet. Our success is measured by those we bring along.
-</p>
-</div>
-</section>
+We are a *"local-first"* initiative, prioritizing technologies and skills that serve the neighborhood directly and function independently of the global grid or Internet. Our success is measured by those who we can bring along.
 
-<section id="mission-section" class="section section-alt">
-<h2 id="mission">Our Mission</h2>
-<div class="section-content">
-<p class="lead">
-To equip our community to build infrastructure, communicate independently, and explore the natural world—ensuring connection and wonder thrive even when the lights go out.
-</p>
+* Our Mission
+:PROPERTIES:
+:CUSTOM_ID: mission
+:HTML_CONTAINER_CLASS: section section-alt
+:END:
 
+#+ATTR_HTML: :class lead
+To equip our community to build infrastructure, communicate independently, and explore the natural world—ensuring connection and wonder. We thrive even when the lights go out.
+
+#+BEGIN_EXPORT html
 <div class="taglines">
   <span class="tag">Build. Communicate. Wonder.</span>
   <span class="tag">Local-first tech, community-first mission.</span>
 </div>
-</div>
-</section>
+#+END_EXPORT
 
-<section id="pillars-section" class="section">
-<h2 id="pillars">The Three Pillars</h2>
-<div class="section-content">
+* The Three Pillars
+:PROPERTIES:
+:CUSTOM_ID: pillars
+:HTML_CONTAINER_CLASS: section
+:END:
+
+#+BEGIN_EXPORT html
 <div class="pillars-grid">
 
   <article class="pillar">
     <div class="pillar-icon">📻</div>
     <h3>Radio</h3>
     <p class="pillar-subtitle">Signals & Resilient Comms</p>
-    <p>We reclaim the airwaves to ensure neighbors can connect when traditional systems fail. Invisible waves carrying voices across the void.</p>
+    <p>We reclaim the airwaves to ensure neighbors can connect when traditional systems fail.</p>
     <ul>
       <li>Solar-powered neighborhood mesh networks (LoRa/Meshtastic)</li>
       <li>Amateur Radio (Ham) training and operations</li>
       <li>Offline-first information caches</li>
-      <li>Censorship-resistant protocols (Nostr)</li>
+      <li>Open protocols over Platform</li>
     </ul>
   </article>
 
@@ -89,7 +62,7 @@ To equip our community to build infrastructure, communicate independently, and e
     <ul>
       <li>Environmental sensors for local parks</li>
       <li>Small rovers for trail maintenance</li>
-      <li>Kinetic art and practical tools</li>
+      <li>Kinetic art or practical tools</li>
       <li>3D printing and CNC fabrication</li>
     </ul>
   </article>
@@ -108,12 +81,15 @@ To equip our community to build infrastructure, communicate independently, and e
   </article>
 
 </div>
-</div>
-</section>
+#+END_EXPORT
 
-<section id="projects-section" class="section section-alt">
-<h2 id="projects">Anchor Projects</h2>
-<div class="section-content">
+* Anchor Projects
+:PROPERTIES:
+:CUSTOM_ID: projects
+:HTML_CONTAINER_CLASS: section section-alt
+:END:
+
+#+BEGIN_EXPORT html
 <div class="projects-grid">
 
   <article class="project">
@@ -132,12 +108,15 @@ To equip our community to build infrastructure, communicate independently, and e
   </article>
 
 </div>
-</div>
-</section>
+#+END_EXPORT
 
-<section id="principles-section" class="section">
-<h2 id="principles">Operating Principles</h2>
-<div class="section-content">
+* Operating Principles
+:PROPERTIES:
+:CUSTOM_ID: principles
+:HTML_CONTAINER_CLASS: section
+:END:
+
+#+BEGIN_EXPORT html
 <div class="principles-grid">
 
   <div class="principle">
@@ -161,12 +140,15 @@ To equip our community to build infrastructure, communicate independently, and e
   </div>
 
 </div>
-</div>
-</section>
+#+END_EXPORT
 
-<section id="outline-container-get-involved" class="section">
-<h2 id="get-involved">Get Involved</h2>
-<div  id="text-get-involved">
+* Get Involved
+:PROPERTIES:
+:CUSTOM_ID: get-involved
+:HTML_CONTAINER_CLASS: section
+:END:
+
+#+BEGIN_EXPORT html
 <div class="involvement-grid">
 
   <div class="involvement-card">
@@ -181,21 +163,8 @@ To equip our community to build infrastructure, communicate independently, and e
 
   <div class="involvement-card">
     <h3>Micro-Grants</h3>
-    <p>$500–$2k grants available for open community builds with publicly published deliverables. Your idea, our support.</p>
+    <p>Grants available for open community builds with publicly published deliverables. Your idea, our support.</p>
   </div>
 
 </div>
-</div>
-</section>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <p class="footer-brand">R3 Commons Foundation</p>
-    <p class="footer-tagline">Open tools for hard times and clear nights.</p>
-    <p class="footer-legal">All outputs open: CERN-OHL (hardware) · CC BY-SA (content) · Apache/MIT (software)</p>
-    <p class="footer-inspiration">"Somewhere, something incredible is waiting to be known." — Carl Sagan</p>
-  </div>
-</footer>
-</body>
-</html>
+#+END_EXPORT

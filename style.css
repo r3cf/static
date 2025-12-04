@@ -1,26 +1,37 @@
 /* R3 Commons Foundation - Neo Brutalist + Space/Machine Theme */
+/* Color Palette: Night Sky Indigo, Signal Orange, Maker Green, Blueprint Blue */
+
+/* Google Fonts - Montserrat for headers */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap');
 
 :root {
-  --color-bg: #FFFEF0;
-  --color-bg-alt: #F0F4F8;
+  /* Primary Palette */
+  --color-night: #1A1F3D;           /* Night Sky Indigo - Primary */
+  --color-signal: #FF8C00;          /* Signal Orange - Accent/Action */
+  --color-maker: #4CAF50;           /* Maker Green - Secondary */
+  --color-blueprint: #E3E9F2;       /* Blueprint Blue - Light backgrounds */
+  --color-blueprint-dark: #B0C4DE;  /* Blueprint Blue - Lines/accents */
+
+  /* Derived colors */
+  --color-bg: #FAFBFD;
+  --color-bg-alt: var(--color-blueprint);
   --color-black: #0D0D0D;
   --color-text: #1a1a1a;
-  --color-accent: #FF5722;
-  --color-accent-2: #3D5AFE;
-  --color-accent-3: #00E676;
-  --color-yellow: #FFEB3B;
-  --color-night: #0f1729;
-  --color-twilight: #1a2744;
+  --color-twilight: #252B4A;
   --color-star: #ffeaa7;
-  --color-nebula: #a29bfe;
-  --color-signal: #00cec9;
+
+  /* Borders & Shadows */
   --border: 3px solid var(--color-black);
   --border-thick: 5px solid var(--color-black);
   --shadow: 6px 6px 0 var(--color-black);
   --shadow-sm: 4px 4px 0 var(--color-black);
-  --font-main: 'Arial Black', 'Helvetica Bold', sans-serif;
-  --font-body: 'Arial', 'Helvetica', sans-serif;
-  --font-mono: 'Courier New', 'Courier', monospace;
+
+  /* Typography */
+  --font-main: 'Montserrat', 'Arial Black', sans-serif;
+  --font-body: 'Roboto', 'Arial', sans-serif;
+  --font-mono: 'Roboto Mono', 'Courier New', monospace;
+
+  /* Layout */
   --max-width: 1200px;
   --spacing: 2rem;
 }
@@ -50,12 +61,12 @@ body {
 }
 
 /* ============================================
-   HERO - Night Sky with Stars
+   HERO - Night Sky with Logo
    ============================================ */
 .hero {
   background: var(--color-night);
-  padding: 6rem var(--spacing) 5rem;
-  text-align: left;
+  padding: 4rem var(--spacing) 5rem;
+  text-align: center;
   border-bottom: var(--border-thick);
   position: relative;
   overflow: hidden;
@@ -102,7 +113,7 @@ body {
   100% { opacity: 1; }
 }
 
-/* Horizon glow */
+/* Horizon glow - orange tint */
 .hero::after {
   content: '';
   position: absolute;
@@ -111,8 +122,8 @@ body {
   right: 0;
   height: 150px;
   background: linear-gradient(to top,
-    rgba(255, 107, 107, 0.15) 0%,
-    rgba(162, 155, 254, 0.1) 50%,
+    rgba(255, 140, 0, 0.15) 0%,
+    rgba(76, 175, 80, 0.08) 50%,
     transparent 100%
   );
   pointer-events: none;
@@ -121,31 +132,39 @@ body {
 .hero .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
   position: relative;
   z-index: 1;
 }
 
+/* Logo */
+.hero-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
 .hero h1 {
   font-family: var(--font-main);
-  font-size: clamp(3rem, 12vw, 7rem);
+  font-size: clamp(2.5rem, 10vw, 5rem);
   margin: 0;
   letter-spacing: -0.02em;
   font-weight: 900;
   color: var(--color-bg);
   text-transform: uppercase;
-  line-height: 0.9;
-  text-shadow: 4px 4px 0 var(--color-accent);
+  line-height: 0.95;
+  text-shadow: 4px 4px 0 var(--color-signal);
 }
 
 .hero .subtitle {
   font-family: var(--font-mono);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 0.15em;
   color: var(--color-signal);
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   font-weight: 700;
-  background: var(--color-black);
+  background: rgba(0,0,0,0.4);
   display: inline-block;
   padding: 0.5rem 1rem;
   border: 3px solid var(--color-signal);
@@ -154,9 +173,15 @@ body {
 
 /* Blinking signal indicator */
 .hero .subtitle::before {
-  content: '●';
-  margin-right: 0.5rem;
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--color-signal);
+  border-radius: 50%;
+  margin-right: 0.75rem;
   animation: blink 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--color-signal);
 }
 
 @keyframes blink {
@@ -165,27 +190,21 @@ body {
 }
 
 .hero .tagline {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--color-bg);
   margin: 0;
-  font-weight: 700;
-  max-width: 650px;
-  line-height: 1.3;
+  font-weight: 500;
+  max-width: 600px;
+  line-height: 1.4;
 }
 
-/* Inspirational quote */
+/* Inspirational quote - hidden */
 .hero-quote {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--color-nebula);
-  margin-top: 1rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--color-nebula);
-  font-style: italic;
+  display: none;
 }
 
 /* ============================================
-   NAVIGATION - Machine/Terminal Style
+   NAVIGATION - Industrial Style
    ============================================ */
 .nav {
   background: var(--color-black);
@@ -193,21 +212,22 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  font-family: var(--font-mono);
+  font-family: var(--font-main);
 }
 
 .nav .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0;
   flex-wrap: wrap;
 }
 
 .nav a {
-  color: var(--color-signal);
+  color: var(--color-blueprint);
   text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 1rem 1.5rem;
   border-right: 2px solid #333;
@@ -217,7 +237,9 @@ body {
 
 .nav a::before {
   content: '>';
+  font-family: var(--font-mono);
   margin-right: 0.5rem;
+  color: var(--color-signal);
   opacity: 0;
   transition: opacity 0.1s;
 }
@@ -229,6 +251,7 @@ body {
 
 .nav a:hover::before {
   opacity: 1;
+  color: var(--color-black);
 }
 
 /* ============================================
@@ -236,8 +259,13 @@ body {
    ============================================ */
 .section {
   padding: 5rem 0;
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
   border-bottom: var(--border-thick);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section:last-of-type {
@@ -255,14 +283,31 @@ body {
   border-bottom-color: var(--color-signal);
 }
 
+.section .container,
+.section > .section-content,
+.section > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section > .section-content,
+.section > div:not(.container) {
+  max-width: var(--max-width);
+  width: 100%;
+}
+
 .section h2 {
   font-family: var(--font-main);
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(1.8rem, 5vw, 3rem);
   margin: 0 0 2rem;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: var(--color-night);
   position: relative;
   display: inline-block;
+  font-weight: 900;
+  letter-spacing: -0.01em;
 }
 
 .section h2::after {
@@ -272,7 +317,7 @@ body {
   left: 0;
   width: 100%;
   height: 6px;
-  background: var(--color-accent);
+  background: var(--color-signal);
 }
 
 .section-space h2 {
@@ -280,16 +325,16 @@ body {
 }
 
 .section-space h2::after {
-  background: var(--color-signal);
+  background: var(--color-maker);
 }
 
 .section .lead {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   max-width: 800px;
   margin: 2rem 0;
   color: var(--color-text);
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .section-space .lead {
@@ -309,26 +354,45 @@ body {
 /* ============================================
    MANIFESTO - Inspirational
    ============================================ */
-#manifesto {
-  background: var(--color-yellow);
+#manifesto,
+#manifesto-section {
+  background: linear-gradient(135deg, var(--color-signal) 0%, #FF9F40 100%);
   position: relative;
 }
 
-#manifesto::before {
+#manifesto::before,
+#manifesto-section::before {
   content: '"';
   position: absolute;
   top: 2rem;
   right: 2rem;
-  font-size: 15rem;
+  font-size: 12rem;
   font-family: Georgia, serif;
-  color: rgba(0,0,0,0.08);
+  color: rgba(0,0,0,0.1);
   line-height: 1;
   pointer-events: none;
 }
 
-#manifesto .lead {
-  font-size: 1.6rem;
-  font-weight: 700;
+#manifesto h2,
+#manifesto-section h2 {
+  color: var(--color-black);
+}
+
+#manifesto h2::after,
+#manifesto-section h2::after {
+  background: var(--color-black);
+}
+
+#manifesto .lead,
+#manifesto-section .lead {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+#manifesto p,
+#manifesto-section p {
+  color: rgba(0,0,0,0.85);
 }
 
 /* ============================================
@@ -336,18 +400,19 @@ body {
    ============================================ */
 .taglines {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 2rem;
 }
 
 .tag {
-  background: var(--color-black);
+  background: var(--color-night);
   color: var(--color-bg);
   padding: 0.75rem 1.5rem;
   font-family: var(--font-mono);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 500;
   text-transform: uppercase;
   position: relative;
 }
@@ -366,6 +431,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
+  width: 100%;
+  max-width: var(--max-width);
 }
 
 .pillar {
@@ -407,26 +474,26 @@ body {
   box-shadow: 9px 9px 0 var(--color-black);
 }
 
-/* Radio - Signal waves feel */
+/* Radio - Signal Orange */
 .pillar:nth-child(1) {
-  background: linear-gradient(135deg, #FFE4E1 0%, #fff5f5 100%);
-  border-left: 8px solid var(--color-accent);
+  background: linear-gradient(135deg, #FFF3E0 0%, #FFE8CC 100%);
+  border-left: 8px solid var(--color-signal);
 }
 
-/* Robotics - Circuit/tech feel */
+/* Robotics - Maker Green */
 .pillar:nth-child(2) {
-  background: linear-gradient(135deg, #E1F5FE 0%, #f0f9ff 100%);
-  border-left: 8px solid var(--color-accent-2);
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  border-left: 8px solid var(--color-maker);
 }
 
-/* Research - Night sky feel */
+/* Research - Night Sky Indigo */
 .pillar:nth-child(3) {
-  background: linear-gradient(135deg, #EDE7F6 0%, #f8f5ff 100%);
-  border-left: 8px solid var(--color-nebula);
+  background: linear-gradient(135deg, var(--color-blueprint) 0%, #D6E4F0 100%);
+  border-left: 8px solid var(--color-night);
 }
 
 .pillar-icon {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   display: block;
 }
@@ -434,33 +501,51 @@ body {
 .pillar h3 {
   font-family: var(--font-main);
   margin: 0 0 0.25rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--color-black);
   text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
 }
 
 .pillar .pillar-subtitle {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-black);
   margin: 0 0 1rem;
   letter-spacing: 0.1em;
-  background: var(--color-yellow);
+  text-transform: uppercase;
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  text-transform: uppercase;
+}
+
+.pillar:nth-child(1) .pillar-subtitle {
+  background: var(--color-signal);
+  color: var(--color-black);
+}
+
+.pillar:nth-child(2) .pillar-subtitle {
+  background: var(--color-maker);
+  color: white;
+}
+
+.pillar:nth-child(3) .pillar-subtitle {
+  background: var(--color-night);
+  color: white;
 }
 
 .pillar p {
   margin: 0 0 1rem;
   max-width: none;
-  font-weight: 500;
+  font-weight: 400;
+  text-align: left;
 }
 
 .pillar ul {
   margin: 0;
   padding-left: 0;
   list-style: none;
+  text-align: left;
 }
 
 .pillar li {
@@ -471,19 +556,20 @@ body {
 }
 
 .pillar li::before {
-  content: '▸';
+  content: '>';
+  font-family: var(--font-mono);
   position: absolute;
   left: 0;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-signal);
 }
 
 .pillar:nth-child(2) li::before {
-  color: var(--color-accent-2);
+  color: var(--color-maker);
 }
 
 .pillar:nth-child(3) li::before {
-  color: var(--color-nebula);
+  color: var(--color-night);
 }
 
 /* ============================================
@@ -494,6 +580,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+  width: 100%;
+  max-width: var(--max-width);
 }
 
 .project {
@@ -517,24 +605,24 @@ body {
   top: -1px;
   right: 1rem;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  background: var(--color-accent-3);
-  color: var(--color-black);
+  font-size: 0.6rem;
+  background: var(--color-maker);
+  color: white;
   padding: 0.2rem 0.5rem;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
 
 .project:nth-child(1) {
-  border-top: 8px solid var(--color-accent);
+  border-top: 8px solid var(--color-signal);
 }
 
 .project:nth-child(2) {
-  border-top: 8px solid var(--color-accent-2);
+  border-top: 8px solid var(--color-maker);
 }
 
 .project:nth-child(3) {
-  border-top: 8px solid var(--color-signal);
+  border-top: 8px solid var(--color-night);
 }
 
 .project h3 {
@@ -543,12 +631,15 @@ body {
   font-size: 1.1rem;
   color: var(--color-black);
   text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
 }
 
 .project p {
   margin: 0;
   max-width: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  text-align: left;
 }
 
 /* ============================================
@@ -559,11 +650,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  width: 100%;
+  max-width: var(--max-width);
 }
 
 .principle {
   padding: 1.5rem;
-  border-left: 6px solid var(--color-black);
+  border-left: 6px solid var(--color-night);
   background: var(--color-bg);
   position: relative;
 }
@@ -578,16 +671,18 @@ body {
 
 .principle h3 {
   font-family: var(--font-main);
-  color: var(--color-black);
+  color: var(--color-night);
   margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   display: inline;
+  font-weight: 700;
 }
 
 .principle p {
   max-width: none;
   margin: 1rem 0;
+  text-align: left;
 }
 
 .licenses {
@@ -595,9 +690,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  background: var(--color-black);
-  color: var(--color-signal);
+  font-size: 0.8rem;
+  background: var(--color-night);
+  color: var(--color-blueprint);
   padding: 1rem;
   border: 2px solid var(--color-signal);
 }
@@ -609,13 +704,14 @@ body {
 .licenses li::before {
   content: '>';
   margin-right: 0.5rem;
-  color: var(--color-accent);
+  color: var(--color-signal);
 }
 
 /* ============================================
    INVOLVEMENT - Call to Action
    ============================================ */
-#get-involved {
+#get-involved,
+#get-involved-section {
   background: linear-gradient(135deg, var(--color-night) 0%, var(--color-twilight) 100%);
   color: var(--color-bg);
   position: relative;
@@ -623,7 +719,8 @@ body {
 }
 
 /* Subtle grid pattern */
-#get-involved::before {
+#get-involved::before,
+#get-involved-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -637,12 +734,14 @@ body {
   pointer-events: none;
 }
 
-#get-involved h2 {
+#get-involved h2,
+#get-involved-section h2 {
   color: var(--color-bg);
 }
 
-#get-involved h2::after {
-  background: var(--color-yellow);
+#get-involved h2::after,
+#get-involved-section h2::after {
+  background: var(--color-signal);
 }
 
 .involvement-grid {
@@ -652,10 +751,12 @@ body {
   margin-top: 2rem;
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
 }
 
 .involvement-card {
-  background: var(--color-yellow);
+  background: var(--color-signal);
   border: var(--border-thick);
   padding: 2rem;
   box-shadow: var(--shadow);
@@ -669,25 +770,38 @@ body {
 }
 
 .involvement-card:nth-child(2) {
-  background: var(--color-accent);
+  background: var(--color-maker);
+  color: white;
 }
 
 .involvement-card:nth-child(3) {
-  background: var(--color-signal);
+  background: var(--color-blueprint);
+  color: var(--color-black);
 }
 
 .involvement-card h3 {
   font-family: var(--font-main);
-  color: var(--color-black);
+  color: inherit;
   margin: 0 0 0.75rem;
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.involvement-card:nth-child(1) h3 {
+  color: var(--color-black);
 }
 
 .involvement-card p {
   margin: 0;
   max-width: none;
   font-weight: 500;
+  color: inherit;
+  text-align: left;
+}
+
+.involvement-card:nth-child(1) p {
   color: var(--color-black);
 }
 
@@ -709,51 +823,51 @@ body {
   right: 0;
   height: 4px;
   background: linear-gradient(90deg,
-    var(--color-accent) 0%,
-    var(--color-yellow) 25%,
-    var(--color-signal) 50%,
-    var(--color-accent-2) 75%,
-    var(--color-nebula) 100%
+    var(--color-signal) 0%,
+    var(--color-signal) 33%,
+    var(--color-maker) 33%,
+    var(--color-maker) 66%,
+    var(--color-night) 66%,
+    var(--color-night) 100%
   );
 }
 
 .footer .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 0.5rem;
 }
 
 .footer-brand {
   font-family: var(--font-main);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   letter-spacing: 0.05em;
   color: var(--color-bg);
   margin: 0;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .footer-tagline {
   font-family: var(--font-mono);
   color: var(--color-signal);
   margin: 0.5rem 0 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .footer-legal {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-bg);
   margin: 0;
   font-family: var(--font-mono);
   opacity: 0.6;
 }
 
+/* Footer inspiration quote - hidden */
 .footer-inspiration {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #333;
-  font-style: italic;
-  color: var(--color-nebula);
-  font-size: 0.95rem;
+  display: none;
 }
 
 /* ============================================
@@ -765,12 +879,20 @@ body {
   }
 
   .hero {
-    padding: 4rem var(--spacing) 3rem;
+    padding: 3rem var(--spacing) 2.5rem;
+  }
+
+  .hero-logo {
+    width: 80px;
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 15vw, 4rem);
-    text-shadow: 3px 3px 0 var(--color-accent);
+    font-size: clamp(2rem, 12vw, 3.5rem);
+    text-shadow: 3px 3px 0 var(--color-signal);
+  }
+
+  .hero .tagline {
+    font-size: 1.2rem;
   }
 
   .section {
@@ -783,7 +905,7 @@ body {
 
   .nav a {
     padding: 0.75rem 1rem;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     border-right: none;
     border-bottom: 2px solid #333;
   }
@@ -805,8 +927,9 @@ body {
     box-shadow: var(--shadow-sm);
   }
 
-  #manifesto::before {
-    font-size: 8rem;
+  #manifesto::before,
+  #manifesto-section::before {
+    font-size: 6rem;
     top: 1rem;
     right: 1rem;
   }
