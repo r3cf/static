@@ -1,0 +1,844 @@
+/* R3 Commons Foundation - Neo Brutalist + Space/Machine Theme */
+
+:root {
+  --color-bg: #FFFEF0;
+  --color-bg-alt: #F0F4F8;
+  --color-black: #0D0D0D;
+  --color-text: #1a1a1a;
+  --color-accent: #FF5722;
+  --color-accent-2: #3D5AFE;
+  --color-accent-3: #00E676;
+  --color-yellow: #FFEB3B;
+  --color-night: #0f1729;
+  --color-twilight: #1a2744;
+  --color-star: #ffeaa7;
+  --color-nebula: #a29bfe;
+  --color-signal: #00cec9;
+  --border: 3px solid var(--color-black);
+  --border-thick: 5px solid var(--color-black);
+  --shadow: 6px 6px 0 var(--color-black);
+  --shadow-sm: 4px 4px 0 var(--color-black);
+  --font-main: 'Arial Black', 'Helvetica Bold', sans-serif;
+  --font-body: 'Arial', 'Helvetica', sans-serif;
+  --font-mono: 'Courier New', 'Courier', monospace;
+  --max-width: 1200px;
+  --spacing: 2rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+/* ============================================
+   HERO - Night Sky with Stars
+   ============================================ */
+.hero {
+  background: var(--color-night);
+  padding: 6rem var(--spacing) 5rem;
+  text-align: left;
+  border-bottom: var(--border-thick);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Star field background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 230px 80px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 350px 200px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 420px 50px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 500px 180px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 580px 90px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 650px 250px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 720px 30px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 800px 170px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 880px 220px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 950px 60px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 1020px 140px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 1100px 200px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 100px 300px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 200px 350px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 400px 280px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 600px 320px, var(--color-star), transparent),
+    radial-gradient(2px 2px at 800px 380px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 1000px 300px, var(--color-star), transparent);
+  animation: twinkle 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Horizon glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to top,
+    rgba(255, 107, 107, 0.15) 0%,
+    rgba(162, 155, 254, 0.1) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: var(--font-main);
+  font-size: clamp(3rem, 12vw, 7rem);
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  color: var(--color-bg);
+  text-transform: uppercase;
+  line-height: 0.9;
+  text-shadow: 4px 4px 0 var(--color-accent);
+}
+
+.hero .subtitle {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  color: var(--color-signal);
+  margin: 1rem 0;
+  font-weight: 700;
+  background: var(--color-black);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 3px solid var(--color-signal);
+  position: relative;
+}
+
+/* Blinking signal indicator */
+.hero .subtitle::before {
+  content: '●';
+  margin-right: 0.5rem;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.3; }
+}
+
+.hero .tagline {
+  font-size: 1.6rem;
+  color: var(--color-bg);
+  margin: 0;
+  font-weight: 700;
+  max-width: 650px;
+  line-height: 1.3;
+}
+
+/* Inspirational quote */
+.hero-quote {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-nebula);
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-nebula);
+  font-style: italic;
+}
+
+/* ============================================
+   NAVIGATION - Machine/Terminal Style
+   ============================================ */
+.nav {
+  background: var(--color-black);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: var(--font-mono);
+}
+
+.nav .container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--color-signal);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  border-right: 2px solid #333;
+  transition: all 0.1s;
+  position: relative;
+}
+
+.nav a::before {
+  content: '>';
+  margin-right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+
+.nav a:hover {
+  background: var(--color-signal);
+  color: var(--color-black);
+}
+
+.nav a:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+  padding: 5rem 0;
+  border-bottom: var(--border-thick);
+  position: relative;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+/* Section with space theme */
+.section-space {
+  background: linear-gradient(135deg, var(--color-night) 0%, var(--color-twilight) 100%);
+  color: var(--color-bg);
+  border-bottom-color: var(--color-signal);
+}
+
+.section h2 {
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+  color: var(--color-black);
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--color-accent);
+}
+
+.section-space h2 {
+  color: var(--color-bg);
+}
+
+.section-space h2::after {
+  background: var(--color-signal);
+}
+
+.section .lead {
+  font-size: 1.4rem;
+  max-width: 800px;
+  margin: 2rem 0;
+  color: var(--color-text);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.section-space .lead {
+  color: var(--color-bg);
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 0 1rem;
+  color: var(--color-text);
+}
+
+.section-space p {
+  color: rgba(255,255,255,0.85);
+}
+
+/* ============================================
+   MANIFESTO - Inspirational
+   ============================================ */
+#manifesto {
+  background: var(--color-yellow);
+  position: relative;
+}
+
+#manifesto::before {
+  content: '"';
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 15rem;
+  font-family: Georgia, serif;
+  color: rgba(0,0,0,0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+
+#manifesto .lead {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ============================================
+   TAGLINES
+   ============================================ */
+.taglines {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.tag {
+  background: var(--color-black);
+  color: var(--color-bg);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.tag::before {
+  content: '//';
+  margin-right: 0.5rem;
+  color: var(--color-signal);
+}
+
+/* ============================================
+   PILLARS - Machine Cards
+   ============================================ */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pillar {
+  background: var(--color-bg);
+  border: var(--border-thick);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.1s, box-shadow 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Machine corner brackets */
+.pillar::before,
+.pillar::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--color-black);
+  border-style: solid;
+  opacity: 0.3;
+}
+
+.pillar::before {
+  top: 10px;
+  left: 10px;
+  border-width: 3px 0 0 3px;
+}
+
+.pillar::after {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 3px 3px 0;
+}
+
+.pillar:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--color-black);
+}
+
+/* Radio - Signal waves feel */
+.pillar:nth-child(1) {
+  background: linear-gradient(135deg, #FFE4E1 0%, #fff5f5 100%);
+  border-left: 8px solid var(--color-accent);
+}
+
+/* Robotics - Circuit/tech feel */
+.pillar:nth-child(2) {
+  background: linear-gradient(135deg, #E1F5FE 0%, #f0f9ff 100%);
+  border-left: 8px solid var(--color-accent-2);
+}
+
+/* Research - Night sky feel */
+.pillar:nth-child(3) {
+  background: linear-gradient(135deg, #EDE7F6 0%, #f8f5ff 100%);
+  border-left: 8px solid var(--color-nebula);
+}
+
+.pillar-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.pillar h3 {
+  font-family: var(--font-main);
+  margin: 0 0 0.25rem;
+  font-size: 1.8rem;
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+
+.pillar .pillar-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-black);
+  margin: 0 0 1rem;
+  letter-spacing: 0.1em;
+  background: var(--color-yellow);
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+}
+
+.pillar p {
+  margin: 0 0 1rem;
+  max-width: none;
+  font-weight: 500;
+}
+
+.pillar ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.pillar li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.pillar li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.pillar:nth-child(2) li::before {
+  color: var(--color-accent-2);
+}
+
+.pillar:nth-child(3) li::before {
+  color: var(--color-nebula);
+}
+
+/* ============================================
+   PROJECTS - Signal/Data Cards
+   ============================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project {
+  background: var(--color-bg);
+  border: var(--border);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.1s, box-shadow 0.1s;
+  position: relative;
+}
+
+.project:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-black);
+}
+
+/* Status indicator */
+.project::before {
+  content: 'ACTIVE';
+  position: absolute;
+  top: -1px;
+  right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  background: var(--color-accent-3);
+  color: var(--color-black);
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.project:nth-child(1) {
+  border-top: 8px solid var(--color-accent);
+}
+
+.project:nth-child(2) {
+  border-top: 8px solid var(--color-accent-2);
+}
+
+.project:nth-child(3) {
+  border-top: 8px solid var(--color-signal);
+}
+
+.project h3 {
+  font-family: var(--font-main);
+  margin: 0.5rem 0 0.75rem;
+  font-size: 1.1rem;
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+
+.project p {
+  margin: 0;
+  max-width: none;
+  font-size: 1rem;
+}
+
+/* ============================================
+   PRINCIPLES - Terminal/Code Style
+   ============================================ */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.principle {
+  padding: 1.5rem;
+  border-left: 6px solid var(--color-black);
+  background: var(--color-bg);
+  position: relative;
+}
+
+.principle::before {
+  content: '$';
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--color-signal);
+  margin-right: 0.5rem;
+}
+
+.principle h3 {
+  font-family: var(--font-main);
+  color: var(--color-black);
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  display: inline;
+}
+
+.principle p {
+  max-width: none;
+  margin: 1rem 0;
+}
+
+.licenses {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: var(--color-black);
+  color: var(--color-signal);
+  padding: 1rem;
+  border: 2px solid var(--color-signal);
+}
+
+.licenses li {
+  margin-bottom: 0.25rem;
+}
+
+.licenses li::before {
+  content: '>';
+  margin-right: 0.5rem;
+  color: var(--color-accent);
+}
+
+/* ============================================
+   INVOLVEMENT - Call to Action
+   ============================================ */
+#get-involved {
+  background: linear-gradient(135deg, var(--color-night) 0%, var(--color-twilight) 100%);
+  color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid pattern */
+#get-involved::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+#get-involved h2 {
+  color: var(--color-bg);
+}
+
+#get-involved h2::after {
+  background: var(--color-yellow);
+}
+
+.involvement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.involvement-card {
+  background: var(--color-yellow);
+  border: var(--border-thick);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.1s, box-shadow 0.1s;
+  color: var(--color-black);
+}
+
+.involvement-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 rgba(255,255,255,0.3);
+}
+
+.involvement-card:nth-child(2) {
+  background: var(--color-accent);
+}
+
+.involvement-card:nth-child(3) {
+  background: var(--color-signal);
+}
+
+.involvement-card h3 {
+  font-family: var(--font-main);
+  color: var(--color-black);
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+.involvement-card p {
+  margin: 0;
+  max-width: none;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+/* ============================================
+   FOOTER - Ground Control
+   ============================================ */
+.footer {
+  background: var(--color-black);
+  padding: 4rem var(--spacing);
+  color: var(--color-bg);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--color-accent) 0%,
+    var(--color-yellow) 25%,
+    var(--color-signal) 50%,
+    var(--color-accent-2) 75%,
+    var(--color-nebula) 100%
+  );
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-brand {
+  font-family: var(--font-main);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--color-bg);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.footer-tagline {
+  font-family: var(--font-mono);
+  color: var(--color-signal);
+  margin: 0.5rem 0 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-legal {
+  font-size: 0.8rem;
+  color: var(--color-bg);
+  margin: 0;
+  font-family: var(--font-mono);
+  opacity: 0.6;
+}
+
+.footer-inspiration {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #333;
+  font-style: italic;
+  color: var(--color-nebula);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --spacing: 1.25rem;
+  }
+
+  .hero {
+    padding: 4rem var(--spacing) 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 15vw, 4rem);
+    text-shadow: 3px 3px 0 var(--color-accent);
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .nav .container {
+    justify-content: center;
+  }
+
+  .nav a {
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    border-right: none;
+    border-bottom: 2px solid #333;
+  }
+
+  .nav a::before {
+    display: none;
+  }
+
+  .pillars-grid,
+  .projects-grid,
+  .principles-grid,
+  .involvement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar,
+  .project,
+  .involvement-card {
+    box-shadow: var(--shadow-sm);
+  }
+
+  #manifesto::before {
+    font-size: 8rem;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+/* ============================================
+   SELECTION & UTILITIES
+   ============================================ */
+::selection {
+  background: var(--color-signal);
+  color: var(--color-black);
+}
+
+/* Glow effect utility */
+.glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Scanline effect for retro feel */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+}

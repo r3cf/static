@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Signal Lost - R3 Commons</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-night);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Star field */
+    .error-page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        radial-gradient(2px 2px at 50px 50px, var(--color-star), transparent),
+        radial-gradient(2px 2px at 150px 120px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 250px 80px, var(--color-star), transparent),
+        radial-gradient(2px 2px at 350px 200px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 450px 150px, var(--color-star), transparent),
+        radial-gradient(2px 2px at 550px 250px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 650px 100px, var(--color-star), transparent),
+        radial-gradient(2px 2px at 750px 300px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 100px 350px, var(--color-star), transparent),
+        radial-gradient(2px 2px at 300px 400px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 500px 380px, var(--color-star), transparent),
+        radial-gradient(2px 2px at 700px 420px, rgba(255,255,255,0.9), transparent);
+      animation: twinkle 4s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .error-box {
+      background: var(--color-bg);
+      border: var(--border-thick);
+      box-shadow: var(--shadow);
+      padding: 3rem;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Machine corner brackets */
+    .error-box::before,
+    .error-box::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-color: var(--color-black);
+      border-style: solid;
+      opacity: 0.3;
+    }
+
+    .error-box::before {
+      top: 15px;
+      left: 15px;
+      border-width: 4px 0 0 4px;
+    }
+
+    .error-box::after {
+      bottom: 15px;
+      right: 15px;
+      border-width: 0 4px 4px 0;
+    }
+
+    .error-code {
+      font-family: var(--font-main);
+      font-size: 8rem;
+      line-height: 1;
+      margin: 0;
+      color: var(--color-black);
+      text-shadow: 4px 4px 0 var(--color-accent);
+    }
+
+    .error-title {
+      font-family: var(--font-mono);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin: 1rem 0;
+      background: var(--color-night);
+      color: var(--color-signal);
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      border: 2px solid var(--color-signal);
+      letter-spacing: 0.1em;
+    }
+
+    .error-title::before {
+      content: '●';
+      margin-right: 0.5rem;
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    .error-message {
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      color: var(--color-text);
+    }
+
+    .error-quote {
+      font-style: italic;
+      color: var(--color-nebula);
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      padding: 0 1rem;
+    }
+
+    .error-link {
+      display: inline-block;
+      background: var(--color-black);
+      color: var(--color-bg);
+      text-decoration: none;
+      font-family: var(--font-main);
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border: var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.1s, box-shadow 0.1s;
+      margin-top: 1rem;
+    }
+
+    .error-link:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--color-black);
+      background: var(--color-signal);
+      color: var(--color-black);
+    }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <div class="error-box">
+      <p class="error-code">404</p>
+      <p class="error-title">Signal Lost</p>
+      <p class="error-message">The page you're looking for has drifted beyond our range.</p>
+      <p class="error-quote">"For small creatures such as we, the vastness is bearable only through love." — Carl Sagan</p>
+      <a href="/" class="error-link">Return to Base</a>
+    </div>
+  </div>
+</body>
+</html>

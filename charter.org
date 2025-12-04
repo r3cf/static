@@ -1,0 +1,141 @@
+#+title: Charter
+
+:PROPERTIES:
+:ID:       2c0a6f88-2dd6-406b-bf74-e726dd8ecc2a
+:END:
+#+TITLE: R3 COMMONS FOUNDATION
+#+FILETAGS: :default:
+
+[[id:ea5e492a-67a3-4c81-959b-e527bae4e223][donation and charity tracker]]
+
+* R3 COMMONS Charter
+(legal entity: R3 Commons Foundation)
+RADIO · ROBOTICS · RESEARCH
+
+** Taglines:
+*** Build. Communicate. Wonder.
+*** Open tools for hard times and clear nights.
+*** Local-first tech, community-first mission.
+
+** THE MANIFESTO
+We believe that true community resilience isn't just about surviving disasters; it's about thriving daily through shared knowledge and capability. In an era where much of the world is digitalize, we hold that neighbors who can build their own tools, maintain their own communication lines, and understand the sky above them are safer, more connected, and more curious.
+
+We are a "local-first" initiative, prioritizing technologies and skills that serve the neighborhood directly and function independently of the global grid or Internet. Our by-product are measure by those who we are able to bring along.
+
+** OUR MISSION
+To equip our community to build infrastructure, communicate independently, and explore the natural world—ensuring connection and wonder thrive even when the lights go out.
+
+THE THREE PILLARS (R3)
+We achieve our mission through three intersecting zones of practice:
+
+*** RADIO (Signals & Resilient Comms) We reclaim the airwaves to ensure neighbors can connect when traditional systems fail.
+
+Activities: Building solar-powered neighborhood mesh networks (LoRa/Meshtastic); training in Amateur Radio (Ham) operations; creating offline-first information caches. Explore protocols (nostr)
+
+*** ROBOTICS (Machines & Making) We demystify technology by building open hardware that serves local needs.
+
+Activities: Fabricating environmental sensors for local parks; building small rovers for trail maintenance; creating kinetic art and practical tools via 3D printing and CNC.
+
+*** RESEARCH (The Sky & Citizen Science) We look up to regain perspective, navigation skills, and scientific literacy.
+
+Activities: Sidewalk astronomy and star parties; citizen science projects (meteor counts, variable star observation); advocating for dark-sky compliance.
+
+*** OPERATING PRINCIPLES & COVENANT
+To ensure our work is durable, safe, and accessible to all, we adhere to these core rules:
+
+Radical Openness: We do not hoard knowledge. If we build it, we document it.
+
+Hardware Licensing: CERN-OHL-W (Weakly Reciprocal)
+
+Software Licensing: MIT or Apache 2.0
+
+Content/Guides: Creative Commons BY-SA 4.0
+
+Resilience is Social: Hardware fails; neighbors don't. Our systems are designed to connect people, not just devices.
+
+Safety & Stewardship: We commit to a "Safety First" culture, requiring certification for high-power tools, strict RF compliance for radio operations, and dark-sky discipline for night events.
+
+R3 Commons: Open tools for hard times and clear nights. [Website/Contact Info Placeholder]
+
+** Pillars → programs
+*** Robotics & Making (Machines)
+**** Field-robos: small rovers for trail/park maintenance and sensor sweeps.
+**** Kinetic art: robot plotters, light-painting rigs, CNC-fabricated installations.
+**** Tool library: 3D printers, soldering, microcontrollers; safety and repair clinics.
+***** auto aim trash cans [[https://x.com/interneth0f/status/1948986646126624866?s=12&t=i5kVCHxqmLcQpomNw5OmuA][[2025-07-26 Sat 05:50]]]
+***** openarm.dev [[https://x.com/hiro_yams/status/1948661213400883646?s=12&t=i5kVCHxqmLcQpomNw5OmuA][[2025-07-26 Sat 05:54]]]
+***** TODO ai arts. paint over random material for feature
+SCHEDULED: <2025-08-20 Wed>
+- Note taken on [2025-08-05 Tue 07:56] \\
+  make a dino drawing just from the artifacts left over by the board
+
+  https://www.instagram.com/reel/DLNe2FAug-w/?igsh=NTc4MTIwNjQ2YQ==
+***** [[https://github.com/leesweqq/ur5_grasp_object_pybullet][GitHub - leesweqq/ur5_grasp_object_pybullet: This project simulates a UR5 robotic arm with a Robotiq 85 gripper, performing autonomous object grasping and placement tasks in the PyBullet environment.]]
+[2025-08-06 Wed 05:13]
+***** [[https://github.com/phospho-app/lecabot/tree/main][GitHub - phospho-app/lecabot: LeCabot - a low cost mobile manipulator mod for the SO-100 and Unitree Go2]]
+SCHEDULED: <2025-08-28 Thu>
+[2025-08-28 Thu 06:43]
+***** TODO tractor bot
+SCHEDULED: <2025-08-28 Thu>
+- Note taken on [2025-08-09 Sat 14:43] \\
+  https://www.instagram.com/reel/DND816lpgjd/?igsh=NTc4MTIwNjQ2YQ==
+*** Resilient Comms (Signals)
+**** Mesh & radio: LoRa/Meshtastic nodes, neighborhood Wi-Fi mesh, IRC/Matrix bridging, offline-first content caches.
+**** Ham readiness: Technician/General prep, Winlink, simplex nets, emergency power.
+**** “Last-mile culture”: workshops on SMS/USSD gateways, captive portals, and low-bandwidth etiquette.
+***** TODO robots, arts and community foundation
+internet resiliency https://bowshock.nl/irc/
+astronomy
+summer camp
+partners
+    duderanch (night sky)
+    san diego ham (grants)
+SCHEDULED: <2025-09-25 Thu>
+**** censorship resistance
+https://github.com/dmotz/trystero
+nost for events - https://github.com/nostr-protocol/nostr/
+*** Public Astronomy (Sky)
+**** Sidewalk astronomy and star-party logistics; mobile “pop-up” observatory.
+**** Astro-art: star maps, light sculptures, long-exposure “robot light” pieces.
+**** Citizen science: variable stars, occultations, meteor counts, radio astronomy (RTL-SDR).
+
+* Organization
+** Anchor projects (concrete, cross-pillar)
+**** Mesh & Meteors Night: afternoon build of solar-powered LoRa/mesh nodes; evening meteors/star-party; live low-bandwidth chat via IRC bridge.
+**** Robots In The Park: weekend rover build for litter pickup / air-quality logging; display data under a kinetic-light canopy at dusk.
+**** Signal-Sky Cart: hand-truck with battery, router, SDR, small scope, and projector; deploys anywhere for outreach or outages.
+
+** 12-month rollout (lean)
+**** Q1: Set the spine. Fiscally sponsored project; publish charter and licensing; secure small lab space; buy core kits (10 LoRa nodes, 2 scopes, 2 SDR kits, 2 rovers). Run 2 pilot workshops.
+**** Q2: Prove demand. Monthly Mesh Night + Star Night cadence; start ham study group; launch micro-grants ($500–$2k) for open community builds.
+**** Q3: Public build + show. Kinetic art installation driven by sky/sensor data; neighborhood node-a-thon to hit 25 active mesh nodes.
+**** Q4: Resilience drill. 4-hour “internet-light” exercise: operate local services, message relay, and incident logging; publish after-action report.
+
+** Governance & licensing
+**** Board: 3 core + 2 rotating community seats.
+**** All outputs open: CERN-OHL (hardware), CC BY-SA (content), Apache/MIT (software).
+**** Transparent budgets and public meeting notes.
+**** Safety: tool certifications; RF compliance; night-event lighting discipline.
+
+** Funding model (simple)
+**** Founding gift + DAF seeding; recurring small-donor model (“$10 keeps a node online”).
+**** Workshop fees with scholarships.
+**** Corporate matches for equipment; micro-grants tied to open deliverables.
+**** Art commissions that also function as public science devices.
+
+** Impact metrics (track monthly)
+**** Resilience: mesh nodes online, off-grid runtime, message success rate during drills.
+**** Capability: people certified (solder, RF, ham), robots built, kits loaned.
+**** Curiosity: star-party attendance, citizen-science submissions, student projects completed.
+**** Openness: PRs merged, designs reused by other cities.
+
+** Minimal kit list (starter)
+**** Comms: 10× LoRa/Meshtastic nodes, 2× RTL-SDR, 2× portable routers, 2× LiFePO₄ packs + solar.
+**** Robots: 2× rover kits, spares, sensors; 1× plotter.
+**** Astro: 1× 8” Dob, 1× 4” refractor, 2× sturdy tripods, 1× star tracker.
+**** Shop: irons, hand tools, crimpers, PLA/ASA, PPE.
+
+** First actions (do now)
+    1.Pick a name + publish a 1-page charter and license policy.
+    2.Schedule Mesh & Meteors Night #1 with a fixed BOM and build guide.
+    3.Open applications for 3 micro-grants tied to openly published deliverables.
